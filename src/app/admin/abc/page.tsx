@@ -1,7 +1,7 @@
 const A = () => {
     return (
         <div>
-            nested hoidanit
+            nested admin
         </div>
     )
 }

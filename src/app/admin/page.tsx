@@ -1,9 +1,9 @@
-const HoiDanIT = () => {
+const AdminPage = () => {
     return (
         <>
-            hoidanit admin
+            AdminPage
         </>
     )
 }
 
-export default HoiDanIT;
+export default AdminPage;

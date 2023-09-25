@@ -6,7 +6,7 @@ const AppFooter = () => {
             textAlign: "center",
             padding: "5px 0"
         }}>
-            Khóa học Next.JS v13 Basic & Hỏi Dân IT
+            Khóa học Next.JS v13 Basic
         </div>
     )
 }

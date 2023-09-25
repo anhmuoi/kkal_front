@@ -10,7 +10,7 @@ const AppHeader = () => {
             <Container>
                 <Navbar.Brand >
                     <Link href={"/"} className="navbar-brand">
-                        Hỏi Dân IT
+                       Admin
                     </Link>
 
                 </Navbar.Brand>
