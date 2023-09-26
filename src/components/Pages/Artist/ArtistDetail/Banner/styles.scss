@@ -1,0 +1,95 @@
+@import "../../../../../Assets/styles/index.scss";
+.banner {
+    --height: 960px;
+    --fsAuthor: 24px;
+    --fsTit: 64px;
+    --fsDetail: 18px;
+    --fsDate: 16px;
+    --paddingTit: 40px 0;
+    --ptDate: 40px;
+    --sizeSocial: 48px;
+    height: var(--height);
+    position: relative;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .content {
+        width: 85%;
+        position: absolute;
+        top: 50%;
+        left: 15%;
+        transform: translateY(-50%);
+        color: #fff;
+        .singer {
+            font-size: var(--fsAuthor);
+            color: #9b9b9b;
+        }
+        .title {
+            padding: var(--paddingTit);
+            font-size: var(--fsTit);
+            font-family: $pretendardBold;
+        }
+        .detail {
+            font-size: var(--fsDetail);
+            line-height: 1.7;
+        }
+        .publicDate {
+            font-size: var(--fsDate);
+            padding-top: var(--ptDate);
+            .date {
+                padding-left: 10px;
+                color: #d6d6d6;
+            }
+        }
+    }
+
+    .social {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        bottom: 5%;
+        left: 15%;
+        .item {
+            width: var(--sizeSocial);
+                height: var(--sizeSocial);
+            a {
+                
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+                
+            }
+
+            &:not(:first-child) {
+                margin-left: 12px;
+            }
+
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        --height: 760px;
+        --fsAuthor: 20px;
+        --fsTit: 30px;
+        --fsDetail: 16px;
+        --fsDate: 14px;
+        --paddingTit: 20px 0;
+        --ptDate: 20px;
+        --sizeSocial: 30px;
+        .content {
+            width: 85%;
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            transform: translateY(-50%);
+ 
+        }
+        br {
+            display: none;
+        }
+    }
+}

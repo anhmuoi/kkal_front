@@ -1,0 +1,52 @@
+@import "../../../Assets/styles/index.scss";
+.titleSection {
+    --fsTit: 40px;
+    --fsDetail: 15.5px;
+    --fsMore: 18px;
+    --ptDetail: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+   .content {
+    flex: 1;
+    .title {
+        font-size: var(--fsTit);
+        font-family: $pretendardSemiBold;
+        font-size: var(--fsTit);
+    }
+
+    .detail {
+        padding-top: var(--ptDetail);
+        font-size: var(--fsDetail);
+        color: #999;
+    }
+   }
+   .more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--fsMore);
+    color: #141414;
+    cursor: pointer;
+    font-family: $pretendardMedium;
+    img {
+        width: 16px;
+        height: 16px;
+        object-fit: contain;
+        margin-left: 3px;
+    }
+   }
+
+    @media screen and (max-width: 767px) {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        --fsTit: 24px;
+        --fsDetail: 14.5px;
+        --ptDetail: 10px;
+
+        .more {
+            padding-top: 20px;
+        }
+    }
+}

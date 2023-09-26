@@ -1,0 +1,120 @@
+@import "../../../../Assets/styles/index.scss";
+
+.withCuo {
+    --padding: 179px 25px;
+    --grid: 1fr 1fr 1fr;
+    --ptList: 80px;
+    --heightImg: 275px;
+    --paddingContent: 31px 62px 40px 31px;
+    --fsTit: 24px;
+    --fsDetail: 16px;
+    --ptProgress: 216px;
+    --fsTitProgress: 40px;
+    --fsDetailProgress: 24px;
+    --widthProgressImg: 548px;
+
+    background-color: #f6f6f6;
+
+    &-container {
+        max-width: $maxWidth;
+        padding: var(--padding);
+        margin: 0 auto;
+
+        .withCuo-list {
+            display: grid;
+            grid-template-columns: var(--grid);
+            padding-top: var(--ptList);
+            column-gap: 24px;
+
+            .item {
+                background: #fff;
+
+                .img {
+                    width: 100%;
+                    height: var(--heightImg);
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                .content {
+                    padding: var(--paddingContent);
+
+                    .title {
+                        font-size: var(--fsTit);
+                        font-family: $pretendardBold;
+                        padding-bottom: 12px;
+                    }
+
+                    .detail {
+                        font-size: var(--fsDetail);
+                        color: #999;
+                        line-height: 1.5;
+                    }
+                }
+            }
+        }
+
+        .withCuo-progress {
+            padding-top: var(--ptProgress);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 20px;
+            align-items: center;
+
+            .content {
+                .title {
+                    font-size: var(--fsTitProgress);
+                    font-family: $pretendardBold;
+                    line-height: 1.2;
+                }
+
+                .detail {
+                    font-size: var(--fsDetailProgress);
+                    font-family: $pretendardBold;
+                    color: #999;
+                    padding-top: 30px;
+                }
+
+            }
+
+            .progress-img {
+
+                display: flex;
+                justify-content: flex-end;
+
+                img {
+                    width: var(--widthProgressImg);
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        --padding: 79px 20px;
+        --grid: 1fr;
+        --ptList: 40px;
+        --heightImg: 275px;
+        --paddingContent: 20px;
+        --fsTit: 20px;
+        --fsDetail: 13px;
+        --ptProgress: 56px;
+        --fsTitProgress: 20px;
+        --fsDetailProgress: 16px;
+        --widthProgressImg: 548px;
+
+        .withCuo-progress {
+            grid-template-columns: 1fr;
+
+            .progress-img {
+                justify-content: flex-start;
+                padding-top: 40px;
+            }
+        }
+    }
+}

@@ -1,0 +1,44 @@
+@import "../../../../Assets/styles/index.scss";
+
+.statistical {
+    --padding: 43px 25px;
+    --fsTit: 50px;
+    --fsDetail: 16px;
+    --grid: 1fr 1fr 1fr;
+    background-color: #1c1b1f;
+
+    &-container {
+        max-width: 1400px;
+        padding: var(--padding);
+        margin: 0 auto;
+
+        .data {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            justify-content: center;
+            text-align: center;
+            column-gap: 20px;
+
+            .item {
+                .title {
+                    font-size: var(--fsTit);
+                    font-family: $pretendardBold;
+                    color: #009ca9;
+                    padding-bottom: 14px;
+                }
+
+                .detail {
+                    font-size: var(--fsDetail);
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        --padding: 43px 20px;
+        --fsTit: 24px;
+        --fsDetail: 13px;
+        --grid: 1fr 1fr 1fr;
+    }
+}

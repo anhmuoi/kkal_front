@@ -1,0 +1,48 @@
+.ant-pagination-options {
+    display: none !important;
+}
+
+.ant-pagination .ant-pagination-item-active {
+    font-weight: 600;
+    background-color: transparent;
+    border-color: transparent;
+
+    a {
+        color: #009ca9;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+}
+
+.ant-pagination .ant-pagination-prev .ant-pagination-item-link,
+.ant-pagination .ant-pagination-next .ant-pagination-item-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 3px;
+    font-size: 16px;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+    outline: none;
+    transition: border 0.2s;
+}
+
+.ant-pagination .ant-pagination-next {
+    width: 48px;
+    height: 48px;
+    @media screen and (max-width: 767px) {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+.ant-pagination .ant-pagination-prev {
+    width: 48px;
+    height: 48px;
+    @media screen and (max-width: 767px) {
+        width: 28px;
+        height: 28px;
+    }
+}

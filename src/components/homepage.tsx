@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import useSWR from "swr";
 import Link from 'next/link';
-import styles from '@/styles/app.module.css';
+import Home from './Pages/Home';
 
 const HomePage = () => {
 
@@ -22,29 +22,7 @@ const HomePage = () => {
     );
 
     return (
-        <Row className='mt-5'>
-            {data?.slice(0, 3)?.map((blog: IBlog) => {
-                return (
-                    <Col
-                        xs={12} md={4} className='mb-5'
-                    >
-                        <Card>
-                            <Card.Header as="h5">Author: {blog.author}</Card.Header>
-                            <Card.Body>
-                                <Card.Title>{blog.title}</Card.Title>
-                                <Card.Text className={styles["cut-text"]}>
-                                    {blog.content}
-                                </Card.Text>
-                                <Link
-                                    className='btn btn-primary'
-                                    href={`/blogs/${blog.id}`}>View Detail</Link>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                )
-            })}
-        </Row>
-
+        <Home />
     )
 }
 

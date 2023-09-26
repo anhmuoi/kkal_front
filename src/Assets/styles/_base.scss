@@ -1,0 +1,74 @@
+// Montserrat
+@import "./variables.scss";
+@import "./mixins";
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  -webkit-tab-highlight-color: transparent;
+  user-select: none;
+  // @include family--montserrat;
+}
+
+body {
+  font-family: $pretendardVariable;
+  // overflow-x: hidden;
+  // // &::-webkit-scrollbar {
+  // //   display: none;
+  // // }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $black;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+video {
+  max-width: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+.btn-top {
+  position: fixed;
+  right: 120px;
+  bottom: 80px;
+  width: 80px;
+  height: 80px;
+  transition: opacity 500ms ease-out;
+  z-index: 99999;
+
+  img {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 10px;
+    object-fit: contain;
+    cursor: pointer;
+    border-radius: 999px;
+  }
+
+  @media screen and (max-width: 1000px) {
+    right: 60px;
+    bottom: 50px;
+    width: 60px;
+    height: 60px;
+  }
+
+  @media screen and (max-width: 767px) {
+    right: 20px;
+    bottom: 10px;
+  }
+}

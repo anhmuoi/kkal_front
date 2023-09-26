@@ -1,0 +1,94 @@
+@import "../../../../Assets/styles/index.scss";
+.listRadio {
+    --padding: 160px 25px 190px;
+    --grid: 1fr 1fr;
+    --rowGap: 80px;
+    --sizeImg: 390px;
+    --paddingDate:  10px 17px;
+    --fsCommon: 16px;
+    --sizePlayIcon: 89px;
+    --fsTit: 24px;
+    --paddingTit: 21px 0;
+    --ptPagination: 112px;
+    background: #f6f6f6;
+    &-container {
+    padding: var(--padding);
+    max-width: $maxWidth;
+    margin: 0 auto;
+    .list {
+        display: grid;
+        grid-template-columns: var(--grid);
+        column-gap: 24px;
+        row-gap: var(--rowGap);
+        .item {
+            cursor: pointer;
+            &-img {
+                height: var(--sizeImg);
+                position: relative;
+                transition: 400ms all;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+                .date {
+                     position: absolute;
+                     bottom: 0;
+                     left: 0;
+                     padding:var(--paddingDate);
+                    font-size: var(--fsCommon);
+                    background-color: #fff;
+                    font-family: $pretendardMedium;
+                }
+                .playIcon {
+                    width: var(--sizePlayIcon);
+                    height: var(--sizePlayIcon);
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                    display: none;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                    }
+                }
+                &:hover {
+                    .playIcon {
+                        display: block;
+                    }
+                }
+            }
+            .title {
+                font-size: var(--fsTit);
+                font-family: $pretendardBold;
+                padding: var(--paddingTit);
+            }
+            .detail {
+                font-size: var(--fsCommon);
+                color: #999;
+            }
+        }
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        padding-top: var(--ptPagination);
+    }
+    }
+
+    @media screen and (max-width: 767px) {
+        --padding: 60px 20px 90px;
+    --grid: 1fr;
+    --rowGap: 40px;
+    --sizeImg: 390px;
+    --paddingDate:  10px 17px;
+    --fsCommon: 14px;
+    --sizePlayIcon: 60px;
+    --fsTit: 20px;
+    --paddingTit: 15px 0;
+    --ptPagination: 52px;
+    }
+}

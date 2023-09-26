@@ -1,0 +1,67 @@
+@import "../../../../Assets/styles/index.scss";
+
+.heroSection {
+    --fsTit: 56px;
+    --fsDetail: 18px;
+    --mtDetail: 39px;
+    --height: 100vh;
+    height: var(--height);
+    width: 100%;
+    position: relative;
+
+    &-bg {
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0 20px;
+
+        .title {
+            font-family: $IowanRoman;
+            font-size: var(--fsTit);
+            color: #fff;
+            line-height: 1.4;
+
+        }
+
+        .detail {
+            font-size: var(--fsDetail);
+            color: #999999;
+            margin-top: var(--mtDetail);
+            line-height: 1.8;
+        }
+    }
+
+    @media screen and (max-width: 1079px) {
+        --fsTit: 46px;
+        --fsDetail: 18px;
+        --mtDetail: 35px;
+    }
+
+    @media screen and (max-width: 767px) {
+        --fsTit: 32px;
+        --fsDetail: 16px;
+        --mtDetail: 25px;
+        --height: 600px;
+
+        br {
+            display: none;
+        }
+    }
+}

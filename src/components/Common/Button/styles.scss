@@ -1,0 +1,30 @@
+@import "../../../Assets/styles/_variables.scss";
+
+.button-component {
+    cursor: pointer;
+    padding: 12px 30px;
+    border-radius: 28px;
+    background-color: $bg-button-primary;
+    display: inline-flex;
+    align-items: center;
+    font-family: $pretendardBold;
+    span {
+        color: #fff;
+        font-family: $pretendardBold;
+    }
+    transition: 400ms;
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+.normalButton {
+    display: inline-flex;
+    padding: 15px 45px;
+    @media screen and (max-width: 767px) {
+        padding: 12px 20px;
+    }
+    transition: 400ms;
+    &:hover {
+        transform: scale(1.1);
+    }
+}

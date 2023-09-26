@@ -6,6 +6,8 @@ import AppFooter from '@/components/app.footer';
 import Container from 'react-bootstrap/Container';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
+import Header from '@/components/Common/Header/Header';
+import Footer from '@/components/Common/Footer';
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -22,26 +24,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <AppHeader />
-        <Container style={{ minHeight: 'calc(100vh - 106px)' }}>
+        <Header />
           {children}
-        </Container>
-
-        <AppFooter />
-        <ToastContainer
-          position="bottom-center"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="light"
-        />
-      </body>
+        <Footer />
+        
     </html>
   )
 }

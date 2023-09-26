@@ -1,0 +1,80 @@
+@import "../../../../../Assets/styles/index.scss";
+
+.records {
+    --padding: 120px 25px 180px;
+    --fsTit: 40px;
+    --ptList: 60px;
+    --grid: repeat(4, 1fr);
+    --sizeImg: 342px;
+    --fsTitItem: 24px;
+    --fsAuthor: 18px;
+    --paddingButton: 80px;
+
+    &-container {
+        max-width: $maxWidth;
+        margin: 0 auto;
+        padding: var(--padding);
+
+        .title {
+            font-size: var(--fsTit);
+            text-align: center;
+        }
+
+        .list {
+            padding-top: var(--ptList);
+            display: grid;
+            grid-template-columns: var(--grid);
+            column-gap: 24px;
+            row-gap: 80px;
+
+            .item {
+                cursor: pointer;
+
+                .img {
+                    height: var(--sizeImg);
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                .title {
+                    font-size: var(--fsTitItem);
+                    padding: 16px 0 10px;
+                    text-align: left;
+                }
+
+                .author {
+                    font-size: var(--fsAuthor);
+                    color: #999;
+                }
+            }
+        }
+
+        .buttonMore {
+            padding-top: var(--paddingButton);
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    @media screen and (max-width: 1200px) {
+        --grid: repeat(3, 1fr);
+    }
+
+    @media screen and (max-width: 900px) {
+        --grid: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: 767px) {
+        --grid: repeat(1, 1fr);
+        --padding: 60px 20px 80px;
+        --fsTit: 30px;
+        --ptList: 30px;
+        --fsTitItem: 20px;
+        --fsAuthor: 16px;
+        --paddingButton: 50px;
+    }
+}

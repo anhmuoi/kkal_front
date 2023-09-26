@@ -1,0 +1,22 @@
+@import "../../../../Assets/styles/index.scss";
+.info-title {
+    --fsSubTit: 15.5px;
+    --fsTit: 40px;
+    --fsDetail: 18px;
+    text-align: center;
+    .subTit {
+        color: #999;
+        font-size: var(--fsSubTit);
+    }
+    .title {
+        padding-top: 12px;
+        font-size: var(--fsTit);
+        font-family: $pretendardBold;
+    }
+    .detail {
+        font-size: var(--fsDetail);
+        padding-top: 30px;
+        white-space: pre-line;
+        line-height: 1.4;
+    }
+}

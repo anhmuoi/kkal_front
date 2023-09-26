@@ -1,0 +1,150 @@
+@import "../../../Assets/styles/variables";
+
+footer {
+    --fsInfo: 16px;
+    --sizeSocial: 38px;
+    background-color: #141414;
+
+    .footer-container {
+        .topItem {
+            border-bottom: 1px solid #fff;
+
+            &-container {
+                max-width: $maxWidth;
+                padding: 30px 25px;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                margin: 0 auto;
+
+                .list-info {
+                    display: flex;
+                    flex: 1;
+                    align-items: center;
+
+                    .item {
+                        font-size: var(--fsInfo);
+                        margin-right: 30px;
+
+                        a {
+                            color: #fff;
+                            font-family: $pretendardBold;
+                        }
+                    }
+                }
+
+                .social {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    &-item {
+                        margin-left: 10px;
+                        width: var(--sizeSocial);
+                        height: var(--sizeSocial);
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: contain;
+                        }
+                    }
+                }
+            }
+        }
+
+        .bottomItem {
+            max-width: $maxWidth;
+            padding: 40px 25px 60px 10px;
+            margin: 0 auto;
+            color: #fff;
+
+            .infoItem {
+                font-size: var(--fsInfo);
+                padding-left: 15px;
+                display: flex;
+                align-items: center;
+
+                .title {
+                    color: #999;
+                }
+
+                .detail {
+                    padding-left: 3px;
+                }
+            }
+
+            .contact-phone {
+                display: flex;
+                align-items: center;
+            }
+
+            .contact-mail {
+                display: flex;
+                align-items: center;
+                margin-top: 15px;
+            }
+
+            p {
+                font-size: var(--fsInfo);
+                color: #999;
+                padding-left: 15px;
+                margin-top: 30px;
+            }
+        }
+    }
+
+    @media screen and (max-width:900px) {
+        --fsInfo: 14px;
+        --sizeSocial: 30px;
+    }
+
+    @media screen and (max-width:767px) {
+        --sizeSocial: 40px;
+
+        .footer-container {
+            text-align: center;
+
+            .topItem-container {
+                flex-direction: column;
+                padding: 20px;
+
+                .list-info {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    column-gap: 20px;
+                    justify-content: space-between;
+                    width: 100%;
+
+                    .item {
+                        padding-top: 20px;
+                        margin-right: 0px;
+                    }
+                }
+
+                .social {
+                    padding-top: 30px;
+                }
+            }
+
+            .bottomItem {
+                padding: 12px 20px;
+                text-align: left;
+
+                .contact-phone,
+                .contact-mail {
+                    flex-direction: column;
+                    align-items: flex-start;
+
+                    .infoItem {
+                        // justify-content: center;
+                        padding-top: 20px;
+                        flex-wrap: wrap;
+
+                    }
+                }
+            }
+        }
+    }
+
+}

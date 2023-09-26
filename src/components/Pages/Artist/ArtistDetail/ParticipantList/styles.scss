@@ -1,0 +1,56 @@
+@import "../../../../../Assets/styles/index.scss";
+
+.participantList {
+    --padding: 180px 25px;
+    --fsTit: 40px;
+    --ptList: 60px;
+    --grid: repeat(1, 1fr);
+    --fsDate: 16px;
+    --fsTitDate: 24px;
+    background-color: #f6f6f6;
+
+    &-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: var(--padding);
+
+        .title {
+            font-size: var(--fsTit);
+            text-align: center;
+        }
+
+        .list {
+            padding-top: var(--ptList);
+            display: grid;
+            grid-template-columns: var(--grid);
+            row-gap: 30px;
+            justify-content: center;
+            align-items: center;
+
+            .item {
+                display: flex;
+
+                .data {
+                    font-size: var(--fsDate);
+                }
+
+                .titleDate {
+                    font-size: var(--fsTitDate);
+                    font-family: $pretendardBold;
+                    padding-left: 34px;
+                    white-space: pre-line;
+
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        --padding: 80px 20px;
+        --fsTit: 26px;
+        --ptList: 30px;
+        --grid: repeat(1, 1fr);
+        --fsDate: 14px;
+        --fsTitDate: 18px;
+    }
+}
