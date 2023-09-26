@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import language from "../../../Assets/Images/language.png";
 import logo from "../../../Assets/Images/logo.png";
 import { scrollToTop } from "../../../utils/scrollToTop";
@@ -8,29 +8,33 @@ import "./header.scss";
 import Image from "next/image";
 
 const Header: React.FC = () => {
-
   const [openMenu, setOpenMenu] = useState(false);
   const [navbar, setNavbar] = useState(false);
 
   const changeBackground = () => {
-    if (window.scrollY > 10) {
+    if (window.scrollY > 20) {
       setNavbar(true);
     } else {
       setNavbar(false);
     }
   };
-  // window.addEventListener("scroll", changeBackground);
 
+  useEffect(() => {
+    window.addEventListener("scroll", changeBackground);
+    return () => {
+      window.removeEventListener("scroll", changeBackground);
+    };
+  }, []);
 
   return (
     <>
       <header
-        id="header"
+        id="header2"
         style={{
           boxShadow: !navbar ? "none" : undefined,
           backgroundColor: "#141414",
         }}
-        className="header headerSection"
+        className={`header headerSection ${navbar ? "fixed" : ""}`}
       >
         <div className="header_logo">
           <a href="/" className="logo">
@@ -42,7 +46,7 @@ const Header: React.FC = () => {
           {/* //header menu  */}
           <ul className="list_menu">
             {dataRouter.map((item, index) => (
-              <li key={index} className="menu_items">
+              <li key={index} className="menu_items ">
                 <div
                   // className={`${
                   //   pathname.includes(item.router) ? "activeItemsPage" : ""
@@ -58,7 +62,7 @@ const Header: React.FC = () => {
 
         <div className="header_rightMenu">
           <Button
-            type="outline"
+            type="primary"
             text="유통 신청"
             onClick={() => {
               alert("준비중입니다.");
@@ -66,23 +70,17 @@ const Header: React.FC = () => {
           />
 
           <div className="language">
-            <Image src={language} alt="" />
+            <Image src={language} alt="language" width={34} height={34} />
           </div>
         </div>
 
-        <div
-          onClick={() => setOpenMenu(!openMenu)}
-          className="header_mobile_icon"
-        >
+        <div onClick={() => setOpenMenu(!openMenu)} className="header_mobile_icon">
           {iconMobile}
         </div>
       </header>
 
       {/* //MOBILE  */}
-      <aside
-        onClick={() => setOpenMenu(!openMenu)}
-        className={`header-mobile ${openMenu ? "openMenu" : ""}`}
-      >
+      <aside onClick={() => setOpenMenu(!openMenu)} className={`header-mobile ${openMenu ? "openMenu" : ""}`}>
         <div className="icon-close">
           <span>X</span>
         </div>
@@ -95,8 +93,7 @@ const Header: React.FC = () => {
                 // className={`menu_items ${
                 //   pathname.includes(item.router) ? "activeItemsPage" : ""
                 // }`}
-              >
-              </li>
+              ></li>
             ))}
           </ul>
         </div>

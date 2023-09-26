@@ -10,7 +10,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 25px 120px;
-  position: fixed;
+  position: relative;
   box-shadow: $box-shadow;
   @include fadein();
 
@@ -41,13 +41,15 @@
     align-items: center;
     justify-content: center;
 
-
     .list_menu {
       display: flex;
       margin-bottom: 0;
       justify-content: center;
       padding-left: 25px;
       flex: 1;
+      li {
+        color: white;
+      }
 
       .menu_items {
         padding-left: 46px;
@@ -71,7 +73,6 @@
       width: 34px;
       height: 34px;
     }
-
   }
 
   .header_mobile_icon {
@@ -102,7 +103,6 @@
       .list_menu {
         display: none;
       }
-
     }
 
     .header_rightMenu {
@@ -113,12 +113,14 @@
       display: block;
       width: 30px;
       height: 30px;
-      color: $white-cl
+      color: $white-cl;
     }
-
   }
 }
 
+.fixed {
+  position: fixed;
+}
 
 .header-mobile {
   position: fixed;
@@ -152,12 +154,11 @@
         padding-left: 46px;
         padding: 25px 0;
         text-align: center;
-        
+
         a {
           color: $white-cl;
           font-size: 20px;
         }
-
       }
 
       .activeItemsPage {
