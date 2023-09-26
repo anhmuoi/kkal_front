@@ -10,7 +10,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 25px 120px;
-  position: relative;
+  position: fixed;
   box-shadow: $box-shadow;
   @include fadein();
 
@@ -116,10 +116,6 @@
       color: $white-cl;
     }
   }
-}
-
-.fixed {
-  position: fixed;
 }
 
 .header-mobile {

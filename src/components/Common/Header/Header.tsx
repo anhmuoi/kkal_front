@@ -12,11 +12,7 @@ const Header: React.FC = () => {
   const [navbar, setNavbar] = useState(false);
 
   const changeBackground = () => {
-    if (window.scrollY > 20) {
-      setNavbar(true);
-    } else {
-      setNavbar(false);
-    }
+    setNavbar(window.scrollY > 20);
   };
 
   useEffect(() => {
@@ -24,7 +20,7 @@ const Header: React.FC = () => {
     return () => {
       window.removeEventListener("scroll", changeBackground);
     };
-  }, []);
+  }, [window.scrollY]);
 
   return (
     <>
@@ -32,9 +28,9 @@ const Header: React.FC = () => {
         id="header2"
         style={{
           boxShadow: !navbar ? "none" : undefined,
-          backgroundColor: "#141414",
+          backgroundColor: navbar ? "#141414" : "transparent",
         }}
-        className={`header headerSection ${navbar ? "fixed" : ""}`}
+        className="header headerSection"
       >
         <div className="header_logo">
           <a href="/" className="logo">
@@ -62,7 +58,7 @@ const Header: React.FC = () => {
 
         <div className="header_rightMenu">
           <Button
-            type="primary"
+            type="outline"
             text="유통 신청"
             onClick={() => {
               alert("준비중입니다.");

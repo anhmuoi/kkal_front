@@ -18,7 +18,7 @@ function Button({ text, onClick, type = "primary", rightIcon = false, size, styl
         onClick && onClick();
       }}
       style={{
-        background: type === "primary" ? "#ffffff" : type === "outline" ? "#d6d6d6" : "#222222",
+        background: type === "primary" ? "#ffd22e" : type === "outline" ? "#ffffff" : "#222222",
         cursor: "pointer",
         opacity: disable ? 0.5 : 1,
         ...style,
