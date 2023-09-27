@@ -15,11 +15,11 @@ function isRouteNotFound(currentRoute: any) {
 }
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  console.log(isRouteNotFound(pathname));
   
+  console.log(pathname);
   return (
     <html lang="en">
-      {isRouteNotFound(pathname) ? (
+      {isRouteNotFound(pathname) && !pathname.includes("/artist/") ? (
         <>
         {children}
         </>
