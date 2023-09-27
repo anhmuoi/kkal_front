@@ -6,15 +6,15 @@ import { RoutesString } from "../../Modules/routesString";
 import Button from "../Button";
 import "./header.scss";
 import Image from "next/image";
- 
-import { usePathname } from 'next/navigation'
+
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 const Header: React.FC = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const [navbar, setNavbar] = useState(false);
   const pathname = usePathname();
-  
+
   const changeBackground = () => {
     setNavbar(window.scrollY > 20);
   };
@@ -24,7 +24,7 @@ const Header: React.FC = () => {
     return () => {
       window.removeEventListener("scroll", changeBackground);
     };
-  }, [window?.scrollY]);
+  }, [window.scrollY]);
 
   return (
     <>
@@ -47,16 +47,15 @@ const Header: React.FC = () => {
           <ul className="list_menu">
             {dataRouter.map((item, index) => (
               <li key={index} className="menu_items ">
-                <div
-                  className={`${
-                    pathname.includes(item.router) ? "activeItemsPage" : ""
-                  }`}
-                  onClick={scrollToTop}
-                >
-                  <Link href={item.router} style={{textDecoration: 'none'}} className={`${
-                    pathname.includes(item.router) ? "activeItemsPage" : ""
-                  }`}> {item.name}</Link>
-                 
+                <div className={`${pathname.includes(item.router) ? "activeItemsPage" : ""}`} onClick={scrollToTop}>
+                  <Link
+                    href={item.router}
+                    style={{ textDecoration: "none" }}
+                    className={`${pathname.includes(item.router) ? "activeItemsPage" : ""}`}
+                  >
+                    {" "}
+                    {item.name}
+                  </Link>
                 </div>
               </li>
             ))}
@@ -93,9 +92,7 @@ const Header: React.FC = () => {
               <li
                 onClick={scrollToTop}
                 key={index}
-                className={`menu_items ${
-                  pathname.includes(item.router) ? "activeItemsPage" : ""
-                }`}
+                className={`menu_items ${pathname.includes(item.router) ? "activeItemsPage" : ""}`}
               ></li>
             ))}
           </ul>

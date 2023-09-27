@@ -1,10 +1,12 @@
 "use client";
-import Link from "next/link";
-import Card from "react-bootstrap/Card";
-import useSWR, { Fetcher } from "swr";
+import InfoPage from "@/components/Pages/Info";
 
 const ViewDetailBlog = ({ params }: { params: { id: string } }) => {
-  return <div>a</div>;
+  return (
+    <div className="info-page">
+      <InfoPage />
+    </div>
+  );
 };
 
 export default ViewDetailBlog;

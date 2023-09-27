@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import img1 from "../../../../Assets/Images/img-news-thumb-01@3x.png";
 import img2 from "../../../../Assets/Images/img-news-thumb-02@3x.png";
@@ -12,12 +13,12 @@ import img10 from "../../../../Assets/Images/img-news-thumb-10@3x.png";
 
 import "./styles.scss";
 import Pagination from "../../../Common/Pagination";
-import { useNavigate } from "react-router-dom";
 import { scrollToTop } from "../../../../utils/scrollToTop";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 function News() {
-  const navigation = useNavigate();
+  const router = useRouter();
   return (
     <div className="newsPage">
       <div className="newsPage-container">
@@ -25,7 +26,7 @@ function News() {
           {data.map((item, index) => (
             <div
               onClick={() => {
-                navigation(`/news/${item.id}`);
+                router.push(`/news/${item.id}`);
                 scrollToTop();
               }}
               key={index}
@@ -58,8 +59,7 @@ export default News;
 const data = [
   {
     img: img1,
-    title:
-      "[큐오뮤직] 오는 3월 서비스 전면 개편에 나설 예정...앞으로 기대되는 성장",
+    title: "[큐오뮤직] 오는 3월 서비스 전면 개편에 나설 예정...앞으로 기대되는 성장",
     detail:
       "효과적은 팬들과의 소통과 뮤지션 홍보를 위해 페이스북, 인스타그램, 유튜브 등 SNS 채널에 소개영상을 게시합니다. 인터뷰 영상, 제작스케치 영상을 활용한 콘텐츠를 제작하여 네이버포스트에 게시합니다.",
     id: "item-1",
@@ -81,16 +81,14 @@ const data = [
   },
   {
     img: img4,
-    title:
-      "[큐오뮤직] 오는 3월 서비스 전면 개편에 나설 예정...앞으로 기대되는 성장",
+    title: "[큐오뮤직] 오는 3월 서비스 전면 개편에 나설 예정...앞으로 기대되는 성장",
     detail: `효과적은 팬들과의 소통과 뮤지션 홍보를 위해 페이스북, 인스타그램, 유튜브 등 SNS 채널에 소개영상을 게시합니다. 인터뷰 영상, 제작스케치 영상을 활용한 콘텐츠를 제작하여 네이버포스트에 게시합니다.`,
     id: "item-1",
     date: "2023. 01. 16",
   },
   {
     img: img5,
-    title:
-      "[큐오뮤직] 오는 3월 서비스 전면 개편에 나설 예정...앞으로 기대되는 성장",
+    title: "[큐오뮤직] 오는 3월 서비스 전면 개편에 나설 예정...앞으로 기대되는 성장",
     detail:
       "효과적은 팬들과의 소통과 뮤지션 홍보를 위해 페이스북, 인스타그램, 유튜브 등 SNS 채널에 소개영상을 게시합니다. 인터뷰 영상, 제작스케치 영상을 활용한 콘텐츠를 제작하여 네이버포스트에 게시합니다.",
     id: "item-1",
@@ -105,8 +103,7 @@ const data = [
   },
   {
     img: img7,
-    title:
-      "[큐오뮤직] 오는 3월 서비스 전면 개편에 나설 예정...앞으로 기대되는 성장",
+    title: "[큐오뮤직] 오는 3월 서비스 전면 개편에 나설 예정...앞으로 기대되는 성장",
     detail:
       "효과적은 팬들과의 소통과 뮤지션 홍보를 위해 페이스북, 인스타그램, 유튜브 등 SNS 채널에 소개영상을 게시합니다. 인터뷰 영상, 제작스케치 영상을 활용한 콘텐츠를 제작하여 네이버포스트에 게시합니다.",
     id: "item-1",
@@ -128,8 +125,7 @@ const data = [
   },
   {
     img: img10,
-    title:
-      "[큐오뮤직] 오는 3월 서비스 전면 개편에 나설 예정...앞으로 기대되는 성장",
+    title: "[큐오뮤직] 오는 3월 서비스 전면 개편에 나설 예정...앞으로 기대되는 성장",
     detail: `효과적은 팬들과의 소통과 뮤지션 홍보를 위해 페이스북, 인스타그램, 유튜브 등 SNS 채널에 소개영상을 게시합니다. 인터뷰 영상, 제작스케치 영상을 활용한 콘텐츠를 제작하여 네이버포스트에 게시합니다.`,
     id: "item-1",
     date: "2023. 01. 16",
