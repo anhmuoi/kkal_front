@@ -7,13 +7,30 @@ import Container from "react-bootstrap/Container";
 import "react-toastify/dist/ReactToastify.css";
 import Header from "@/components/Common/Header/Header";
 import Footer from "@/components/Common/Footer";
+import { usePathname } from "next/navigation";
+import { RoutesString } from "@/components/Modules/routesString";
 
+function isRouteNotFound(currentRoute: any) {
+  return !Object.values(RoutesString).includes(currentRoute);
+}
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+  console.log(isRouteNotFound(pathname));
+  
   return (
     <html lang="en">
-      <Header />
-      {children}
-      <Footer />
+      {isRouteNotFound(pathname) ? (
+        <>
+        {children}
+        </>
+      
+      ): (
+        <>
+          <Header />
+          {children}
+          <Footer />
+        </>
+      )}
     </html>
   );
 }

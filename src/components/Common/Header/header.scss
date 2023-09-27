@@ -53,6 +53,14 @@
 
       .menu_items {
         padding-left: 46px;
+        div {
+
+          &:hover{
+  
+            color: #ffd22e;
+            cursor: pointer;
+          }
+        }
 
         .activeItemsPage {
           color: #ffd22e;

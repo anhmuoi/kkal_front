@@ -14,9 +14,9 @@ interface Props {
 function Button({ text, onClick, type = "primary", rightIcon = false, size, style, disable }: Props) {
   return (
     <div
-      onClick={() => {
-        onClick && onClick();
-      }}
+      // onClick={() => {
+      //   onClick && onClick();
+      // }}
       style={{
         background: type === "primary" ? "#ffd22e" : type === "outline" ? "#ffffff" : "#222222",
         cursor: "pointer",

@@ -22,7 +22,7 @@ function TitleSection({title,detail,rightAction}:Props) {
       </div>
       <div onClick={rightAction} className="more">
         <p>View more</p>
-        <Image src={arrowRight} alt="" />
+        <Image src={arrowRight} alt="" height={16} width={16}/>
       </div>
     </div>
   );

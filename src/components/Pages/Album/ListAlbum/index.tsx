@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import img1 from "../../../../Assets/Images/img-album-list-01@3x.png";
 import img2 from "../../../../Assets/Images/img-album-list-02@3x.png";
 import img3 from "../../../../Assets/Images/img-album-list-03@3x.png";
@@ -14,6 +13,7 @@ import arrowRight from "../../../../Assets/Images/arrow-right.png";
 import "./styles.scss";
 import Pagination from "../../../Common/Pagination";
 import Image from "next/image";
+import Link from "next/link";
 function ListAlbum() {
   return (
     <div className="listAlbum">
@@ -23,7 +23,7 @@ function ListAlbum() {
           {data.map((item, index) => (
             <div className="item" key={index}>
               <div className="img">
-                <Image src={item.img} alt="" />
+                <Image src={item.img} alt=""  />
                 <div className="content">
                   <div className="title">{item.title}</div>
                   <div className="author">{item.author}</div>
@@ -32,9 +32,9 @@ function ListAlbum() {
                   <div className="title">{item.title}</div>
                   <div className="detail">{item.detail}</div>
                   <div className="viewmore">
-                    <Link to={""}>
+                    <Link href={""}>
                       View more
-                      <Image src={arrowRight} alt="" />
+                    <Image src={arrowRight} alt="" height={16} width={16}/>
                     </Link>
                   </div>
                 </div>

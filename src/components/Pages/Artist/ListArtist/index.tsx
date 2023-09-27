@@ -1,14 +1,20 @@
+"use client";
 import React from "react";
 import Pagination from "../../../Common/Pagination";
 import arrow from "../../../../Assets/Images/ic-artist-arrow-02@3x.png";
 
 import "./styles.scss";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from 'next/navigation'
+
 import { scrollToTop } from "../../../../utils/scrollToTop";
 import Image from "next/image";
 function ListArtist() {
-  const navigate = useNavigate();
+  const router = useRouter();
 
+  const handleNavigate = async (item: any) => {
+    await scrollToTop();
+    router.push(`/artist/${item.id}`);
+  }
   return (
     <div className="listArtist">
       <div className="listArtist-container">
@@ -16,10 +22,7 @@ function ListArtist() {
         <div className="list">
           {data.map((item, index) => (
             <div
-              onClick={() => {
-                navigate(`/artist/${item.id}`)
-                scrollToTop()
-              }}
+              onClick={() => handleNavigate(item)}
               className="item"
               key={index}
             >

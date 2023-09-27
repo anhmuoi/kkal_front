@@ -29,7 +29,7 @@ function Album() {
         <div className="album-list">
             {data.map((item,index) => (
                 <div key={index} className="album-item">
-                    <Image src={item.img} alt="" />
+                    <Image src={item.img} alt="" style={{height: 'auto'}} />
                     <div className="content">
                         <div className="title">{item.title}</div>
                         <div className="author">{item.author}</div>
