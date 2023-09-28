@@ -17,6 +17,7 @@ import thumb2 from "../../../../Assets/Images/thumbImg_02.png"
 
 import "./styles.scss";
 import Image from "next/image";
+import { pretendardBold, pretendardMedium } from "@/app/styles/fonts";
 function Album() {
   return (
     <div className="album">
@@ -32,7 +33,7 @@ function Album() {
                     <Image src={item.img} alt="" style={{height: 'auto'}} />
                     <div className="content">
                         <div className="title">{item.title}</div>
-                        <div className="author">{item.author}</div>
+                        <div className={`${pretendardMedium.className} author`}>{item.author}</div>
                     </div>
                 </div>
             ))}
@@ -44,7 +45,7 @@ function Album() {
 
         <div className="album-ads">
             <div className="content">
-                <div className="title">What is your <br />
+                <div className={`${pretendardBold.className} title`}>What is your <br />
                     Favorite song?</div>
                     <div className="detail">
                         <a href="https://www.google.com/">내 취향에 맞는 노래를 추천해드립니다.</a>

@@ -30,7 +30,6 @@
                     display: flex;
                     justify-content: space-around;
                     align-items: flex-start;
-                    font-family: $pretendardBold;
 
                     p {
                         flex: 1;
@@ -68,7 +67,6 @@
 
                 .detail {
                     font-size: var(--fsDetail);
-                    font-family: $pretendardMedium;
                     color: #fff;
                 }
 

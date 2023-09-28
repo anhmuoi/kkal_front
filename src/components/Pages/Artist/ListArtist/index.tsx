@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation'
 
 import { scrollToTop } from "../../../../utils/scrollToTop";
 import Image from "next/image";
+import { pretendardBold } from "@/app/styles/fonts";
 function ListArtist() {
   const router = useRouter();
 
@@ -18,7 +19,7 @@ function ListArtist() {
   return (
     <div className="listArtist">
       <div className="listArtist-container">
-        <div className="title">아티스트 리스트</div>
+        <div className={`${pretendardBold.className} title`}>아티스트 리스트</div>
         <div className="list">
           {data.map((item, index) => (
             <div
@@ -27,7 +28,7 @@ function ListArtist() {
               key={index}
             >
               <div className="content">
-                <div className="title">{item.tit}</div>
+                <div className={`${pretendardBold.className} title`}>{item.tit}</div>
                 <div className="img">
                   <Image src={arrow} alt="" />
                 </div>
@@ -36,7 +37,7 @@ function ListArtist() {
               <div className="shape">
                 <div className="shape-item"></div>
               </div>
-              <div className="detail">
+              <div className={`${pretendardBold.className} detail`}>
                 {item.detail}
                 <span>{item.status}</span>
               </div>

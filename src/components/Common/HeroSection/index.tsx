@@ -2,6 +2,7 @@ import React from 'react'
 
 import "./styles.scss"
 import Image from 'next/image'
+import { pretendardBold } from '@/app/styles/fonts'
 interface Props {
   title:string,
   detail:string,
@@ -13,7 +14,7 @@ function HeroSection({title,detail,bg,button}:Props) {
     <div className='heroSectionIntro'>
         <Image src={bg} alt="" />
         <div className="content">
-            <div className="title">{title}</div>
+            <div className={`${pretendardBold.className} title`}>{title}</div>
             <div className="detail">
             {detail}
             </div>

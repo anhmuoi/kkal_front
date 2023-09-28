@@ -45,7 +45,6 @@
 
                     .title {
                         font-size: var(--fsTit);
-                        font-family: $pretendardBold;
                         padding-bottom: 12px;
                     }
 
@@ -68,13 +67,11 @@
             .content {
                 .title {
                     font-size: var(--fsTitProgress);
-                    font-family: $pretendardBold;
                     line-height: 1.2;
                 }
 
                 .detail {
                     font-size: var(--fsDetailProgress);
-                    font-family: $pretendardBold;
                     color: #999;
                     padding-top: 30px;
                 }

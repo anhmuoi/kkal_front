@@ -1,5 +1,6 @@
 import React from 'react'
 import "./styles.scss"
+import { pretendardBold } from '@/app/styles/fonts'
 function ParticipantList() {
   return (
     <div className='participantList'>
@@ -10,7 +11,7 @@ function ParticipantList() {
                     <div key={index} className="item">
 
                         <div className="data">{item.date}</div>
-                        <div className="titleDate">{item.tit}</div>
+                        <div className={`${pretendardBold.className} titleDate`}>{item.tit}</div>
                     </div>
                 ))}
             </div>

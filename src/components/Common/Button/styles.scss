@@ -7,10 +7,8 @@
     background-color: $bg-button-primary;
     display: inline-flex;
     align-items: center;
-    font-family: $pretendardBold;
     span {
         color: #fff;
-        font-family: $pretendardBold;
     }
     transition: 400ms;
     &:hover {

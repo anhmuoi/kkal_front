@@ -20,7 +20,6 @@
 
         .title {
             font-size: var(--fsTit);
-            font-family: $pretendardBold;
             color: #333333;
             text-align: center;
         }
@@ -51,7 +50,6 @@
 
                 .title {
                     font-size: var(--fsTitlistItem);
-                    font-family: $pretendardBold;
                     text-align: left;
                 }
 
@@ -84,7 +82,6 @@
                             display: inline-flex;
                             align-items: center;
                             font-size: var(--fsDetailItem);
-                            font-family: $pretendardMedium;
 
                             img {
                                 width: 16px;

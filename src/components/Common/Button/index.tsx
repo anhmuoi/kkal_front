@@ -1,6 +1,7 @@
 import React from "react";
 import { FaChevronRight } from "react-icons/fa";
 import "./styles.scss";
+import { pretendardBold } from "@/app/styles/fonts";
 
 interface Props {
   text: string;
@@ -23,9 +24,9 @@ function Button({ text, onClick, type = "primary", rightIcon = false, size, styl
         opacity: disable ? 0.5 : 1,
         ...style,
       }}
-      className={`${size === "normal" ? "button-component normalButton" : "button-component"}`}
+      className={`${size === "normal" ? `${pretendardBold.className} button-component normalButton` : `${pretendardBold.className} button-component`}`}
     >
-      <span style={{ color: "#333333" }}>{text}</span>
+      <span style={{ color: "#333333" }} className={pretendardBold.className}>{text}</span>
       {rightIcon && (
         <div style={{ paddingLeft: 10 }}>
           <FaChevronRight color={type === "primary" ? "#fff" : "#0062f4"} size={14} />

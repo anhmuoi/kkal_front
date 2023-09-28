@@ -7,6 +7,7 @@ import progress from "../../../../Assets/Images/img-info-revenue@3x.png"
 
 import "./styles.scss"
 import Image from 'next/image'
+import { pretendardBold } from '@/app/styles/fonts'
 
 function WithCuoMusic() {
   return (
@@ -21,10 +22,10 @@ function WithCuoMusic() {
                             <Image src={item.img} alt="" />
                         </div>
                         <div className="content">
-                        <div className="title">
+                        <div className={`${pretendardBold.className} title`}>
                             {item.tit}
                         </div>
-                        <div className="detail">
+                        <div className={`${pretendardBold.className} detail`}>
                             {item.detail}
                         </div>
                         </div>
@@ -34,7 +35,7 @@ function WithCuoMusic() {
 
             <div className="withCuo-progress">
                 <div className="content">
-                    <div className="title">
+                    <div className={`${pretendardBold.className} title`}>
                     음원 발매를 통해 창출된 저작권 <br />
                     수익의 85%를 아티스트에게 지급해 <br />
                      드립니다.

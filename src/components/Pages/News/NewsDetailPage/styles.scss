@@ -28,7 +28,6 @@
             font-size: var(--fsTit);
             padding: var(--paddingTit);
             color: #141414;
-            font-family: $pretendardBold;
         }
 
         .social {
@@ -80,13 +79,11 @@
             text-align: left;
 
             .title {
-                font-family: $pretendardBold;
                 color: #000000;
             }
 
             .subTit {
                 padding: var(--paddingSubTit);
-                font-family: $pretendardBold;
             }
 
             .detail {

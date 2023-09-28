@@ -7,6 +7,7 @@ import playIcon from "../../../../Assets/Images/ic-main-music-play-01@3x.png";
 
 import "./styles.scss";
 import Image from "next/image";
+import { pretendardBold, pretendardMedium } from "@/app/styles/fonts";
 function Recomment() {
   return (
     <div className="recomment">
@@ -19,7 +20,7 @@ function Recomment() {
         <div className="recomment-list">
           {data.map((item, index) => (
             <div style={{ background: item.bg }} className="item" key={index}>
-              <div className="title">
+              <div className={`${pretendardBold.className} title`}>
                 <p>{item.title}</p>
                 <div className="playImg">
                   <Image src={playIcon} alt="" />
@@ -28,7 +29,7 @@ function Recomment() {
               <div className="img">
                 <Image src={item.img} alt="" />
               </div>
-              <div className="detail">
+              <div className={`${pretendardMedium.className} detail`}>
                 <p>{item.detail}</p>
               </div>
             </div>

@@ -14,25 +14,26 @@ import "./styles.scss";
 import Pagination from "../../../Common/Pagination";
 import Image from "next/image";
 import Link from "next/link";
+import { pretendardBold, pretendardMedium } from "@/app/styles/fonts";
 function ListAlbum() {
   return (
     <div className="listAlbum">
       <div className="listAlbum-container">
-        <div className="title">앨범 리스트</div>
+        <div className={`${pretendardBold.className} title`}>앨범 리스트</div>
         <div className="list">
           {data.map((item, index) => (
             <div className="item" key={index}>
               <div className="img">
                 <Image src={item.img} alt=""  />
                 <div className="content">
-                  <div className="title">{item.title}</div>
+                  <div className={`${pretendardBold.className} title`}>{item.title}</div>
                   <div className="author">{item.author}</div>
                 </div>
                 <div className="content-detail">
-                  <div className="title">{item.title}</div>
+                  <div className={`${pretendardBold.className} title`}>{item.title}</div>
                   <div className="detail">{item.detail}</div>
                   <div className="viewmore">
-                    <Link href={""}>
+                    <Link href={""} className={pretendardMedium.className}>
                       View more
                     <Image src={arrowRight} alt="" height={16} width={16}/>
                     </Link>

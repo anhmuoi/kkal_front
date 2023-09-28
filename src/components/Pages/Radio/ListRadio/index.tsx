@@ -10,6 +10,7 @@ import playIcon from "../../../../Assets/Images/btn-mv-play-01@3x.png";
 import "./styles.scss";
 import Pagination from "../../../Common/Pagination";
 import Image from "next/image";
+import { pretendardBold, pretendardMedium } from "@/app/styles/fonts";
 
 function ListRadio() {
   return (
@@ -20,7 +21,7 @@ function ListRadio() {
             <div key={index} className="item">
               <div className="item-img">
                 <Image src={item.img} alt="" />
-                <div className="date">
+                <div className={`${pretendardMedium.className} date`}>
                   <p>{item.date}</p>
                 </div>
                 <div className="playIcon">
@@ -29,7 +30,7 @@ function ListRadio() {
                 
               </div>
 
-              <div className="title">{item.title}</div>
+              <div className={`${pretendardBold.className} title`}>{item.title}</div>
                 <div className="detail">{item.detail}</div>
             </div>
           ))}

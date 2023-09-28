@@ -16,6 +16,7 @@ import Pagination from "../../../Common/Pagination";
 import { scrollToTop } from "../../../../utils/scrollToTop";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { pretendardBold } from "@/app/styles/fonts";
 
 function News() {
   const router = useRouter();
@@ -36,7 +37,7 @@ function News() {
                 <Image src={item.img} alt="" />
               </div>
 
-              <div className="title">{item.title}</div>
+              <div className={`${pretendardBold.className} title`}>{item.title}</div>
               <div className="detail">{item.detail}</div>
 
               <div className="date">

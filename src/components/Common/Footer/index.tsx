@@ -6,6 +6,7 @@ import linkedin from "../../../Assets/Images/ic-footer-linkedin@3x.png";
 import youtube from "../../../Assets/Images/ic-footer-youtube@3x.png";
 import Image from "next/image";
 import Link from "next/link";
+import { pretendardBold } from "@/app/styles/fonts";
 
 function Footer() {
   const infoItem = (tit: string, detail?: string) => (
@@ -31,7 +32,7 @@ function Footer() {
           <div className="social">
             {dataSocial.map((item, index) => (
               <div key={index} className="social-item">
-                <a href={item.link}>
+                <a href={item.link} className={pretendardBold.className}>
                   <Image src={item.img} alt="" />
                 </a>
               </div>

@@ -14,6 +14,7 @@ import Title from "../Title/Title";
 
 import "./styles.scss"
 import Image from "next/image";
+import { pretendardBold } from "@/app/styles/fonts";
 function Services() {
   return (
     <div className="services">
@@ -38,7 +39,7 @@ function Services() {
               <div className="img">
                 <Image src={item.img} alt="" />
               </div>
-              <div className="title">{item.title}</div>
+              <div className={`${pretendardBold.className} title`}>{item.title}</div>
               <p className="detail">{item.detail}</p>
             </div>
           ))}

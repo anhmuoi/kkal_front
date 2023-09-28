@@ -1,5 +1,6 @@
 import React from 'react'
 import "./styles.scss"
+import { pretendardBold } from '@/app/styles/fonts'
 function Statistical() {
   return (
     <div className='statistical'>
@@ -7,7 +8,7 @@ function Statistical() {
             <div className="data">
                 {data.map((item,index) => (
                     <div key={index} className="item">
-                        <div className="title">{item.data}</div>
+                        <div className={`${pretendardBold.className} title`}>{item.data}</div>
                         <div className="detail">{item.detail}</div>
                     </div>
                 ))}

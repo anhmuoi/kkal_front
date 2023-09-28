@@ -38,7 +38,6 @@
                      padding:var(--paddingDate);
                     font-size: var(--fsCommon);
                     background-color: #fff;
-                    font-family: $pretendardMedium;
                 }
                 .playIcon {
                     width: var(--sizePlayIcon);
@@ -62,7 +61,6 @@
             }
             .title {
                 font-size: var(--fsTit);
-                font-family: $pretendardBold;
                 padding: var(--paddingTit);
             }
             .detail {
