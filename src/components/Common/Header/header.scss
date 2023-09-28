@@ -47,16 +47,26 @@
       justify-content: center;
       padding-left: 25px;
       flex: 1;
-      li {
+      .white {
         color: white;
+      }
+
+      .black {
+        color: black;
+      }
+
+      .white-scroll {
+        color: white;
+      }
+
+      .black-scroll {
+        color: black;
       }
 
       .menu_items {
         padding-left: 46px;
         div {
-
-          &:hover{
-  
+          &:hover {
             color: #ffd22e;
             cursor: pointer;
           }

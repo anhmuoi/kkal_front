@@ -10,25 +10,23 @@ import Footer from "@/components/Common/Footer";
 import { usePathname } from "next/navigation";
 import { RoutesString } from "@/components/Modules/routesString";
 import { pretendardVariable } from "./styles/fonts";
+import BtnScrollTop from "@/components/Common/scrollToTop";
 
 function isRouteNotFound(currentRoute: any) {
   return !Object.values(RoutesString).includes(currentRoute);
 }
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  
-  console.log(pathname);
+
   return (
     <html lang="en" className={pretendardVariable.className}>
-      {isRouteNotFound(pathname) && !pathname.includes("/artist/") &&  !pathname.includes("/news/")? (
-        <>
-        {children}
-        </>
-      
-      ): (
+      {isRouteNotFound(pathname) && !pathname.includes("/artist/") && !pathname.includes("/news/") ? (
+        <>{children}</>
+      ) : (
         <>
           <Header />
           {children}
+          <BtnScrollTop />
           <Footer />
         </>
       )}

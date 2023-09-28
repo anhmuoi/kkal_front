@@ -1,6 +1,10 @@
-import React, { useEffect, useMemo, useState } from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import language from "../../../Assets/Images/language.png";
 import logo from "../../../Assets/Images/logo.png";
+import logoDark from "../../../Assets/Images/logo-dark.png";
+import languageDark from "../../../Assets/Images/language-dark.png";
 import { scrollToTop } from "../../../utils/scrollToTop";
 import { RoutesString } from "../../Modules/routesString";
 import Button from "../Button";
@@ -14,17 +18,32 @@ const Header: React.FC = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const [navbar, setNavbar] = useState(false);
   const pathname = usePathname();
-
-  const changeBackground = () => {
-    setNavbar(window.scrollY > 20);
-  };
+  const [isNewsDetail, setIsNewsDetail] = useState(false);
+  const scroll = window.scrollY;
 
   useEffect(() => {
-    window.addEventListener("scroll", changeBackground);
-    return () => {
-      window.removeEventListener("scroll", changeBackground);
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setNavbar(true);
+      } else {
+        setNavbar(false);
+      }
     };
-  }, [window.scrollY]);
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [scroll]);
+
+  useEffect(() => {
+    if (pathname.includes("/news/item")) {
+      setIsNewsDetail(true);
+    } else {
+      setIsNewsDetail(false);
+    }
+  }, [pathname]);
 
   return (
     <>
@@ -38,7 +57,7 @@ const Header: React.FC = () => {
       >
         <div className="header_logo">
           <a href="/" className="logo">
-            <Image src={logo} alt="logo" />
+            <Image src={isNewsDetail ? (!navbar ? logoDark : logo) : logo} alt="logo" />
           </a>
         </div>
 
@@ -51,9 +70,10 @@ const Header: React.FC = () => {
                   <Link
                     href={item.router}
                     style={{ textDecoration: "none" }}
-                    className={`${pathname.includes(item.router) ? "activeItemsPage" : ""}`}
+                    className={`${pathname.includes(item.router) ? "activeItemsPage" : ""}
+                    ${isNewsDetail ? (!navbar ? "black" : "white") : "white"}
+                    `}
                   >
-                    {" "}
                     {item.name}
                   </Link>
                 </div>
@@ -72,7 +92,12 @@ const Header: React.FC = () => {
           />
 
           <div className="language">
-            <Image src={language} alt="language" width={34} height={34} />
+            <Image
+              src={isNewsDetail ? (!navbar ? languageDark : language) : language}
+              alt="language"
+              width={34}
+              height={34}
+            />
           </div>
         </div>
 
@@ -107,7 +132,7 @@ const Header: React.FC = () => {
             }}
           />
           <div className="language">
-            <Image src={language} alt="" />
+            <Image src={isNewsDetail ? (!navbar ? languageDark : language) : language} alt="language" />
           </div>
         </div>
       </aside>
