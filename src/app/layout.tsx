@@ -20,7 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   console.log(pathname);
   return (
     <html lang="en" className={pretendardVariable.className}>
-      {isRouteNotFound(pathname) && !pathname.includes("/artist/") ? (
+      {isRouteNotFound(pathname) && !pathname.includes("/artist/") &&  !pathname.includes("/news/")? (
         <>
         {children}
         </>
