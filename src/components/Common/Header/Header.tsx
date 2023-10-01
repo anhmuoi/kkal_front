@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import language from "../../../Assets/Images/language.png";
 import logo from "../../../Assets/Images/logo.png";
+import btnTop from "../../../Assets/Images/btn-top.png";
 import { scrollToTop } from "../../../utils/scrollToTop";
 import { RoutesString } from "../../Modules/routesString";
 import Button from "../Button";
@@ -28,6 +29,13 @@ const Header: React.FC = () => {
 
   return (
     <>
+       <div
+        style={{ opacity: navbar ? 1 : 0 }}
+        onClick={scrollToTop}
+        className="btn-top"
+      >
+        <Image src={btnTop} alt="" height={80} width={80}/>
+      </div>
       <header
         id="header2"
         style={{

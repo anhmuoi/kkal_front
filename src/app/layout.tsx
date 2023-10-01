@@ -33,7 +33,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             
           <HeaderDynamic />
           {children}
-          <Footer />
+            <Footer />
+            
         </body>
       )}
     </html>

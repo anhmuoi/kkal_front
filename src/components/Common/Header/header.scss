@@ -197,3 +197,32 @@
 .openMenu {
   transform: translateX(0);
 }
+
+.btn-top {
+  position: fixed;
+  right: 120px;
+  bottom: 80px;
+  width: 80px;
+  height: 80px;
+  transition: opacity 500ms ease-out;
+  z-index: 99999;
+
+  img {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 10px;
+    object-fit: contain;
+    cursor: pointer;
+    border-radius: 999px;
+  }
+
+  @media screen and (max-width: 1000px) {
+    right: 60px;
+    bottom: 50px;
+    width: 60px;
+    height: 60px;
+  }
+
+  @media screen and (max-width: 767px) {
+    right: 20px;
+    bottom: 10px;
+  }
+}
