@@ -5,6 +5,7 @@ import language from "../../../Assets/Images/language.png";
 import logo from "../../../Assets/Images/logo.png";
 import logoDark from "../../../Assets/Images/logo-dark.png";
 import languageDark from "../../../Assets/Images/language-dark.png";
+import btnTop from "../../../Assets/Images/btn-top.png";
 import { scrollToTop } from "../../../utils/scrollToTop";
 import { RoutesString } from "../../Modules/routesString";
 import Button from "../Button";
@@ -47,6 +48,9 @@ const Header: React.FC = () => {
 
   return (
     <>
+      <div style={{ opacity: navbar ? 1 : 0 }} onClick={scrollToTop} className="btn-top">
+        <Image src={btnTop} alt="" height={80} width={80} />
+      </div>
       <header
         id="header2"
         style={{
@@ -114,11 +118,19 @@ const Header: React.FC = () => {
         <div className="menu-mobile-items">
           <ul className="list_menu">
             {dataRouter.map((item, index) => (
-              <li
-                onClick={scrollToTop}
-                key={index}
-                className={`menu_items ${pathname.includes(item.router) ? "activeItemsPage" : ""}`}
-              ></li>
+              <li key={index} className="menu_items ">
+                <div className={`${pathname.includes(item.router) ? "activeItemsPage" : ""}`} onClick={scrollToTop}>
+                  <Link
+                    href={item.router}
+                    style={{ textDecoration: "none" }}
+                    className={`${pathname.includes(item.router) ? "activeItemsPage" : ""}
+                    ${isNewsDetail ? (!navbar ? "black" : "white") : "white"}
+                    `}
+                  >
+                    {item.name}
+                  </Link>
+                </div>
+              </li>
             ))}
           </ul>
         </div>
