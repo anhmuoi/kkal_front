@@ -2,8 +2,8 @@
 
 import React, { useEffect, useState } from "react";
 import language from "../../../Assets/Images/language.png";
-import logo from "../../../Assets/Images/logo.png";
-import logoDark from "../../../Assets/Images/logo-dark.png";
+import logo from "../../../Assets/Images/logo.svg";
+import logoDark from "../../../Assets/Images/logo-dark.svg";
 import languageDark from "../../../Assets/Images/language-dark.png";
 import btnTop from "../../../Assets/Images/btn-top.png";
 import { scrollToTop } from "../../../utils/scrollToTop";
