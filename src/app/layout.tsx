@@ -24,11 +24,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       {isRouteNotFound(pathname) && !pathname.includes("/artist/") && !pathname.includes("/news/") ? (
         <>{children}</>
       ) : (
-        <>
-          <Header />
+          <>
+            <body>
+
+          <HeaderDynamic />
           {children}
           <BtnScrollTop />
           <Footer />
+            </body>
         </>
       )}
     </html>
